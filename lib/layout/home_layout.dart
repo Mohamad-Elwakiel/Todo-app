@@ -156,8 +156,9 @@ class _HomeLayoutState extends State<HomeLayout> {
 
                     ),
                   ),
-                ));
+                ), elevation: 15.0);
             isBottomSheetShown = true;
+
           }
 
         },
