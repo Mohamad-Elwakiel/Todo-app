@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Widget defaultButton ({
@@ -58,5 +59,45 @@ Widget defaultFormField({
       icon: Icon(suffixIcon),
       onPressed: suffixPressed,
     ) :  null,
+  ),
+);
+
+Widget buildTaskItem(Map model) => Padding(
+  padding: const EdgeInsets.all(20.0),
+  child: Row(
+    children:
+    [
+      CircleAvatar(
+        radius: 40,
+        child: Text(
+            '${model['time']}'
+        ),
+      ),
+      SizedBox(
+        width: 20,
+      ),
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '${model['tittle']}',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            '${model['date']}',
+            style: TextStyle(
+              color: Colors.grey,
+            ),
+          ),
+        ],
+      ),
+    ],
   ),
 );
