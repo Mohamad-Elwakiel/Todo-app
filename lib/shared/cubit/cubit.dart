@@ -67,6 +67,19 @@ class AppCubit extends Cubit <AppStates> {
 
   }
 
+  void deleteData({required int id}) async {
+
+    database.rawDelete(
+        'DELETE FROM tasks WHERE id = ?',
+        [id]).then((value) {
+      getDataFromDatabase(database);
+      emit(DeleteItemFromDatabaseState());
+
+    });
+
+
+  }
+
    insertToDatabase({required String tittle, required String time, required String date}) async {
     return await database.transaction((txn){
       return txn.rawInsert('INSERT INTO tasks(tittle, date, time, status) VALUES("$tittle","$date","$time","new")').then((value) {

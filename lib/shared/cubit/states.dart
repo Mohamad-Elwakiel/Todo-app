@@ -16,4 +16,6 @@ class ChangeBottomSheetState extends AppStates {}
 
 class UpdateDatabaseState extends AppStates {}
 
+class DeleteItemFromDatabaseState extends AppStates {}
+
 

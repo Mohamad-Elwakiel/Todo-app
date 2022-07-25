@@ -38,6 +38,7 @@ class HomeLayout extends StatelessWidget {
         builder: (context, state) {
           AppCubit cubit = AppCubit.get(context);
           return Scaffold(
+            backgroundColor: Colors.grey[300],
             key: scaffoldKey,
             appBar: AppBar(
               backgroundColor: Colors.blueGrey,
@@ -48,8 +49,6 @@ class HomeLayout extends StatelessWidget {
             floatingActionButton: FloatingActionButton(
               onPressed: ()
               {
-                // form.validate();
-                // var form = formKey.currentState!;
                 if(cubit.isBottomSheetShown) {
                     cubit.insertToDatabase(
                       tittle: titleController.text,
